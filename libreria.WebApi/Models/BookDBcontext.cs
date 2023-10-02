@@ -11,10 +11,13 @@ namespace libreria.WebApi.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) { 
-            modelBuilder.Entity<User>().ToTable("users");
-            modelBuilder.Entity<Book>().ToTable("Books"); 
-        }
+       //protected override void OnModelCreating(ModelBuilder modelBuilder) {
+
+            //modelBuilder.Entity<User>().ToTable("AppBookUsers");
+            //modelBuilder.Entity<Book>().ToTable("Books");
+
+          
+        //}
 
     }
 }
