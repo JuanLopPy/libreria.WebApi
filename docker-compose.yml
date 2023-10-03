@@ -4,6 +4,7 @@ version: '3.4'
 services: 
    todo-app-api:
          image: todo-app-api
+         container_name: todo-app-api
          build:
           context: ./libreria.WebApi
           dockerfile: Dockerfile
@@ -11,6 +12,18 @@ services:
            - "8980:80"
          networks:
            - mynetwork
+
+   libraryappsqlserver:
+         image: mcr.microsoft.com/mssql/server:latest
+         container_name: libraryappsqlserver 
+         ports: 
+           - "14330:1433"
+         environment:
+           - SA_PASSWORD= Abc.123456
+           - ACCEPT_EULA= Y
+         networks: 
+           - mynetwork
+  
 networks:
    mynetwork:
     driver: bridge
